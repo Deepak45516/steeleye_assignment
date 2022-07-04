@@ -1,0 +1,4 @@
+pydoc
+pymongo
+fastapi
+uvicorn
