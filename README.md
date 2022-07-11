@@ -1,5 +1,5 @@
 # steeleye_assignment
-
+```
 from pydoc import cli
 import pymongo
 from fastapi import FastAPI
@@ -29,9 +29,10 @@ def get_trade_data():
 
     return trade_data
 
-
+```
 # Get list of all trades
 
+```
 @app.get("/all_trades")
 def all_trades():
     return get_trade_data()
@@ -46,9 +47,9 @@ def trade_by_id(id):
         if id in trade_data[i].values():
             return trade_data[i]
 
-
+```
 # search by different parameters
-
+```
 @app.get("/query")
 def search(search):
     query_value = []
@@ -63,8 +64,9 @@ def search(search):
             query_value.append(trade_data[i])
 
     return query_value
-
-
+```
+# 4th
+```
 @app.get("/filter")
 def filter_data(assetClass=None, end=None, maxprice=None, minprice=None, start=None, tradeType=None):
     # trade_data=get_trade_data()
@@ -76,3 +78,4 @@ def filter_data(assetClass=None, end=None, maxprice=None, minprice=None, start=N
     #         if minprice <= (trade_data[0])['price']<=maxprice:
     #             trade_list.append[trade_data[0]['price']]
     # return trade_list
+```
